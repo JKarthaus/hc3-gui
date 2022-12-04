@@ -5,9 +5,13 @@
     <mat-card-subtitle>Temperaturstatus</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <div>Temperator Ofen:</div>
-    <div>Temperator Pufferspeicher:</div>
-    <div>Temperator Garage:</div>
+    <button mat-fab extended color="primary" (click)="getHc3State()">
+      <mat-icon>favorite</mat-icon>
+      Daten aktualisieren
+    </button>
+    <div>Temperator Ofen:{{hc3State.temp_combustionChamber}}</div>
+    <div>Temperator Pufferspeicher:{{hc3State.bufferTemperature}}</div>
+    <div>Temperator Garage:{{hc3State.garageTemperature}}</div>
   </mat-card-content>
 </mat-card>
 
@@ -18,9 +22,9 @@
     <mat-card-subtitle>Pumpenstatus</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <div>Pumpe Heizung Werkstatt:</div>
-    <div>Pumpe Ofen:</div>
-    <div>Pumpe Haus:</div>
+    <div>Pumpe Heizung Werkstatt:{{hc3State.garagePumpON}}</div>
+    <div>Pumpe Ofen:{{hc3State.flowPumpON}}</div>
+    <div>Pumpe Haus:{{hc3State.mainCircuitPumpON}}</div>
   </mat-card-content>
 </mat-card>
 
