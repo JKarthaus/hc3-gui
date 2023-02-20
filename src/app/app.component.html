@@ -9,9 +9,9 @@
       <mat-icon>favorite</mat-icon>
       Daten aktualisieren
     </button>
-    <div>Temperator Ofen:{{hc3State.temp_combustionChamber}}</div>
-    <div>Temperator Pufferspeicher:{{hc3State.bufferTemperature}}</div>
-    <div>Temperator Garage:{{hc3State.garageTemperature}}</div>
+    <div>Temperatur Ofen:{{hc3State.temp_combustionChamber}}</div>
+    <div>Temperatur Pufferspeicher:{{hc3State.bufferTemperature}}</div>
+    <div>Temperatur Garage:{{hc3State.garageTemperature}}</div>
   </mat-card-content>
 </mat-card>
 
@@ -35,9 +35,9 @@
     <mat-card-subtitle>Brennkammer</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <a href="http://hc3-werkstatt:8888/sources/0/dashboards/1?refresh=5s&lower=now%28%29%20-%201h&present=true"
-       target="_dashboard"><img src="/assets/img/chronograf.png">
+    <a href="/data/" target="_dashboard"><img src="/assets/img/chronograf.png">
       HC3 Dashboard
     </a>
   </mat-card-content>
 </mat-card>
+
