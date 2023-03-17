@@ -5,13 +5,48 @@
     <mat-card-subtitle>Temperaturstatus</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <button mat-fab extended color="primary" (click)="getHc3State()">
-      <mat-icon>favorite</mat-icon>
-      Daten aktualisieren
-    </button>
-    <div>Temperatur Ofen:{{hc3State.temp_combustionChamber}}</div>
-    <div>Temperatur Pufferspeicher:{{hc3State.bufferTemperature}}</div>
-    <div>Temperatur Garage:{{hc3State.garageTemperature}}</div>
+    <div mat-dialog-actions align="center">
+      <button mat-fab extended color="primary" (click)="getHc3State()">
+        <mat-icon>cached</mat-icon>
+        Daten aktualisieren
+      </button>
+    </div>
+    <ngx-gauge
+      type="arch"
+      [size]="250"
+      [max]='110'
+      label="Puffer"
+      [thresholds]="highTempTreshold"
+      [value]="hc3State.bufferTemperature"
+      [thick]="12"
+      class="hc3"></ngx-gauge>
+    <ngx-gauge
+      type="arch"
+      [size]="250"
+      [max]='110'
+      label="Ofen"
+      [thresholds]="highTempTreshold"
+      [value]="hc3State.temp_combustionChamber"
+      [thick]="12"
+      class="hc3"></ngx-gauge>
+    <ngx-gauge
+      type="arch"
+      [size]="250"
+      [max]='110'
+      label="Garage"
+      [thresholds]="lowTempTreshold"
+      [value]="hc3State.garageTemperature"
+      [thick]="12"
+      class="hc3"></ngx-gauge>
+    <ngx-gauge
+      type="arch"
+      [size]="250"
+      [max]='110'
+      label="Outdoor"
+      [thresholds]="outdoorTempTreshold"
+      [value]="hc3State.outdoorTemperature"
+      [thick]="12"
+      class="hc3"></ngx-gauge>
   </mat-card-content>
 </mat-card>
 
@@ -40,4 +75,5 @@
     </a>
   </mat-card-content>
 </mat-card>
+
 

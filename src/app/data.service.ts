@@ -6,6 +6,7 @@ export interface Hc3State {
   temp_combustionChamber: number;
   flowTemperature: number;
   bufferTemperature: number;
+  outdoorTemperature: number;
   garageTemperature: number;
   flowPumpON: boolean;
   garagePumpON: boolean;
